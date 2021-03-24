@@ -5,18 +5,15 @@
 </template>
 
 <script>
-import jsonp from "jsonp";
-
 export default {
   name: "App",
   components: {},
-  data(){
-    retrun{}
-  }
+  data() {},
 };
 </script>
 
 <style>
 #app {
+  font-size: 1rem;
 }
 </style>
