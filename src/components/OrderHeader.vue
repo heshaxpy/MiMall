@@ -1,5 +1,5 @@
 <template>
-  <div>order-header</div>
+  <div></div>
 </template>
 
 <script>
