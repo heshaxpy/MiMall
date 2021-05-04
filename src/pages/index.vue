@@ -255,8 +255,6 @@ export default {
     },
 
     addCart(id) {
-      this.showModal = true;
-      return;
       this.axios
         .post("/carts", {
           productId: id,
