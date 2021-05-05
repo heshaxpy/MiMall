@@ -73,11 +73,7 @@
 </template>
 <script>
 import { swiper, swiperSlide } from "vue-awesome-swiper";
-import "swiper/swiper-bundle.css";
 import ProductParam from "./../components/ProductParam";
-import SwiperCore, { EffectFade } from "swiper";
-
-SwiperCore.use([EffectFade]);
 
 export default {
   name: "product",

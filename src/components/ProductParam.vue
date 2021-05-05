@@ -1,7 +1,9 @@
 <template>
   <div class="nav-bar" :class="{ is_fixed: isFixed }">
     <div class="container">
-      <div class="pro-title">小米8</div>
+      <div class="pro-title">
+        {{ title }}
+      </div>
       <div class="pro-param">
         <a href="javascript:;">概述</a><span>|</span>
         <a href="javascript:;">参数</a><span>|</span>
@@ -11,10 +13,12 @@
     </div>
   </div>
 </template>
-
 <script>
 export default {
   name: "nav-bar",
+  props: {
+    title: String,
+  },
   data() {
     return {
       isFixed: false,
@@ -33,20 +37,19 @@ export default {
     },
   },
   destroyed() {
-    window.removeEventListener("scroll", this.initHeight, true);
+    window.removeEventListener("scroll", this.initHeight, false);
   },
 };
 </script>
-
 <style lang="scss">
 @import "./../assets/scss/config.scss";
 @import "./../assets/scss/mixin.scss";
-
 .nav-bar {
   height: 70px;
   line-height: 70px;
   border-top: 1px solid $colorH;
   background-color: $colorG;
+  z-index: 10;
   &.is_fixed {
     position: fixed;
     top: 0;
@@ -62,7 +65,6 @@ export default {
     }
     .pro-param {
       font-size: $fontJ;
-
       span {
         margin: 0 10px;
       }
